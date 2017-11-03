@@ -1,0 +1,35 @@
+@font-face { font-family: 'yoga-serif'; src: url("../fonts/YogaWebPro.eot"); }
+
+@font-face { font-family: 'yoga-serif'; src: url("../fonts/YogaWebPro.woff") format("woff"); }
+
+@font-face { font-family: 'yoga-serif'; src: url("../fonts/YogaWebPro-Italic.eot"); font-style: italic; }
+
+@font-face { font-family: 'yoga-serif'; src: url("../fonts/YogaWebPro-Italic.woff") format("woff"); font-style: italic; }
+
+@font-face { font-family: 'yoga-serif'; src: url("../fonts/YogaWebPro-Bold.eot"); font-weight: bold; }
+
+@font-face { font-family: 'yoga-serif'; src: url("../fonts/YogaWebPro-Bold.woff") format("woff"); font-weight: bold; }
+
+@font-face { font-family: 'yoga-serif'; src: url("../fonts/YogaWebPro-BoldItalic.eot"); font-weight: bold; font-style: italic; }
+
+@font-face { font-family: 'yoga-serif'; src: url("../fonts/YogaWebPro-BoldItalic.woff") format("woff"); font-weight: bold; font-style: italic; }
+
+@font-face { font-family: 'yoga-sans'; src: url("../fonts/YogaSansWeb.eot"); }
+
+@font-face { font-family: 'yoga-sans'; src: url("../fonts/YogaSansWeb.woff") format("woff"); }
+
+@font-face { font-family: 'yoga-sans'; src: url("../fonts/YogaSansWeb-Italic.eot"); font-style: italic; }
+
+@font-face { font-family: 'yoga-sans'; src: url("../fonts/YogaSansWeb-Italic.woff") format("woff"); font-style: italic; }
+
+@font-face { font-family: 'yoga-sans'; src: url("../fonts/YogaSansWeb-Bold.eot"); font-weight: bold; }
+
+@font-face { font-family: 'yoga-sans'; src: url("../fonts/YogaSansWeb-Bold.woff") format("woff"); font-weight: bold; }
+
+@font-face { font-family: 'yoga-sans'; src: url("../fonts/YogaSansWeb-BoldItalic.eot"); font-weight: bold; font-style: italic; }
+
+@font-face { font-family: 'yoga-sans'; src: url("../fonts/YogaSansWeb-BoldItalic.woff") format("woff"); font-weight: bold; font-style: italic; }
+
+@font-face { font-family: 'Atlas Grotesk Web'; src: url("../fonts/AtlasGrotesk-Regular-Web.eot"), url("../fonts/AtlasGrotesk-Regular-Web.woff") format("woff"); font-weight: 400; font-style: normal; font-stretch: normal; }
+
+/*# sourceMappingURL=maps/core-fonts.css.map */

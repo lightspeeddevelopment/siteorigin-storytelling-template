@@ -1,0 +1,1 @@
+{"version":3,"sources":["sostt.scss"],"names":[],"mappings":"AAAA,6BAIG;AAEH,4BAAO;AACP,2BAAO;AACP,6BAAO","file":"../sostt.css","sourcesContent":["/**\n * Styles.\n *\n * @package sostt\n */\n\n@import 'core-fonts.css';\n@import 'core-tool.css';\n@import 'core-custom.css';\n\n// @import 'include-media';\n"]}
