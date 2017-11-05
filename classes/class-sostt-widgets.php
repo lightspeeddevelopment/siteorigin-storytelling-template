@@ -28,6 +28,7 @@ class Sostt_Widgets {
 	 */
 	public function widgets_active( $widgets ) {
 		$widgets['storytelling-image'] = true;
+		$widgets['storytelling-text'] = true;
 		return $widgets;
 	}
 

@@ -33,6 +33,9 @@ class Sostt_Frontend {
 		if ( true === $this->apply_hooks ) {
 			$this->clean_hooks();
 
+			add_filter( 'body_class', array( $this, 'body_class' ) );
+			add_filter( 'siteorigin_panels_widget_classes', array( $this, 'siteorigin_panels_widget_classes' ), 20, 4 );
+
 			add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ), 20 );
 
 			add_action( 'sostt_get_header', array( $this, 'get_header' ) );
@@ -77,6 +80,31 @@ class Sostt_Frontend {
 			remove_action( 'wp_enqueue_scripts', 'ot_load_google_fonts_css', 1 );
 			remove_action( 'wp_enqueue_scripts', 'ot_load_dynamic_css', 999 );
 		}
+	}
+
+	/**
+	 * Add custom body classes.
+	 */
+	public function body_class( $classes ) {
+		$classes[] = 'template-setting-paragraph-spacing-Spaces';
+		$classes[] = 'template-setting-pagination-Scroll';
+		$classes[] = 'template-setting-navigation-option-None';
+		$classes[] = 'template-setting-pop-up-style-Overlay';
+		$classes[] = 'template-setting-drop-caps-Drop';
+		return $classes;
+	}
+
+	/**
+	 * Add custom widget classes.
+	 */
+	public function siteorigin_panels_widget_classes( $classes, $widget_class, $instance, $widget_info ) {
+		if ( 'Storytelling_Widget_Image_Widget' === $widget_class ) {
+			$classes[] = 'chapter sostt-section chapter-type-text';
+		} elseif ( 'Storytelling_Widget_Text_Widget' === $widget_class ) {
+			$classes[] = 'chapter sostt-section chapter-type-text';
+		}
+
+		return $classes;
 	}
 
 	/**

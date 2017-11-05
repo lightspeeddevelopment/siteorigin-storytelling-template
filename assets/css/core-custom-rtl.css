@@ -380,9 +380,9 @@ body:not(.page-compose) .section-cover .sostt-cover-chapter-padding-top-as-margi
 
 .story-cover { position: relative; overflow: hidden; }
 
-.section-cover { margin-top: -5rem; }
+.section-cover { margin-bottom: -5rem; /* LS custom */ margin-top: -5rem; }
 
-@media screen and (max-width: 567px) { .section-cover { margin-top: -2rem; } }
+@media screen and (max-width: 567px) { .section-cover { margin-bottom: -2rem; /* LS custom */ margin-top: -2rem; } }
 
 .empty-title-design { display: none; }
 
@@ -777,7 +777,7 @@ body.app .story-cover { min-height: 100%; }
 
 .template-setting-drop-caps-Drop .chapter .chapter-title:first-child + blockquote + p:first-letter { float: right; font-size: 5.6em; padding-top: 0.105em; padding-left: 0.05em; margin-bottom: -0.01em; line-height: 0.7; padding-bottom: 0; font-style: normal; }
 
-.template-setting-drop-caps-Drop .chapter > p:first-of-type:not(.sostt-caption):not(.sostt-block):first-letter { float: right; font-size: 5.6em; padding-top: 0.105em; padding-left: 0.05em; margin-bottom: -0.01em; line-height: 0.7; padding-bottom: 0; font-style: normal; }
+.template-setting-drop-caps-Drop .chapter > p:first-of-type:not(.sostt-caption):not(.sostt-block):first-letter, .template-setting-drop-caps-Drop .chapter .so-widget-storytelling-text > p:first-of-type:not(.sostt-caption):not(.sostt-block):first-letter { /* LS custom */ float: right; font-size: 5.6em; padding-top: 0.105em; padding-left: 0.05em; margin-bottom: -0.01em; line-height: 0.7; padding-bottom: 0; font-style: normal; }
 
 .template-setting-pagination-Paginate .story-wrapper { position: fixed; width: 100%; height: 100%; }
 

@@ -1081,11 +1081,13 @@ body:not(.page-compose) .section-cover .sostt-cover-chapter-padding-top-as-margi
 }
 
 .section-cover {
+	margin-bottom: -5rem; /* LS custom */
 	margin-top: -5rem;
 }
 
 @media screen and (max-width: 567px) {
 	.section-cover {
+		margin-bottom: -2rem; /* LS custom */
 		margin-top: -2rem;
 	}
 }
@@ -2365,7 +2367,8 @@ body.app .story-cover {
 			font-style: normal;
 		}
 	}
-	> p:first-of-type:not(.sostt-caption):not(.sostt-block):first-letter {
+	> p:first-of-type:not(.sostt-caption):not(.sostt-block):first-letter,
+	.so-widget-storytelling-text > p:first-of-type:not(.sostt-caption):not(.sostt-block):first-letter { /* LS custom */
 		float: left;
 		font-size: 5.6em;
 		padding-top: 0.105em;

@@ -9,7 +9,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>">
-	<section class="sostt-section story-cover" id="story-cover">
+	<section class="sostt-section story-cover">
 		<div class="sostt-cover-text-color cover-text-bold sostt-cover sostt-block-align-center">
 			<div class="cover-text-wrapper sostt-cover-column-width-and-alignment cover-text-on-solid-background">
 				<h1 class="cover-title sostt-cover-font-sans-serif">

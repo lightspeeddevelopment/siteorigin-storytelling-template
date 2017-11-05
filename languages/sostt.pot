@@ -18,3 +18,35 @@ msgstr ""
 #: classes/class-sostt-admin.php:22
 msgid "SiteOrigin Storytelling"
 msgstr ""
+
+#: widgets/storytelling-image/storytelling-image.php:14
+msgid "Storytelling Image"
+msgstr ""
+
+#: widgets/storytelling-image/storytelling-image.php:16
+msgid "Storytelling image widget."
+msgstr ""
+
+#: widgets/storytelling-image/storytelling-image.php:28
+msgid "Image file"
+msgstr ""
+
+#: widgets/storytelling-image/storytelling-image.php:34
+msgid "Title text"
+msgstr ""
+
+#: widgets/storytelling-image/storytelling-image.php:39
+msgid "Tagline text"
+msgstr ""
+
+#: widgets/storytelling-text/storytelling-text.php:14
+msgid "Storytelling Text"
+msgstr ""
+
+#: widgets/storytelling-text/storytelling-text.php:16
+msgid "Storytelling text widget."
+msgstr ""
+
+#: widgets/storytelling-text/storytelling-text.php:28
+msgid "Text"
+msgstr ""
