@@ -797,6 +797,6 @@ body.app .story-cover { min-height: 100%; }
 
 .sostt-custom-class-1 { height: 100vh !important; }
 
-.rev_slider_wrapper { width: 50rem; }
+.rev_slider_wrapper { margin-top: 2rem !important; margin-bottom: 2rem !important; width: 50rem; }
 
 .rev_slider_wrapper ul { max-width: none; }

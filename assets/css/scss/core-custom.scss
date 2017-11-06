@@ -2530,9 +2530,15 @@ body.app .story-cover {
 	height: 100vh !important;
 }
 
+// .widget_revslider {
+// 	@extend .chapter;
+// }
+
 .rev_slider_wrapper {
 	@extend .sostt-block;
 
+	margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
 	width: 50rem;
 
 	ul {
