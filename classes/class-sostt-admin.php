@@ -64,7 +64,7 @@ class Sostt_Admin {
 			<br>
 			<input style="margin: 2px 0; width: 80%;" value="<?php echo esc_attr( $landing_page_link ); ?>" type="text" name="sostt_landing_page_link">
 		</label>
-		<?
+		<?php
 	}
 
 	/**
