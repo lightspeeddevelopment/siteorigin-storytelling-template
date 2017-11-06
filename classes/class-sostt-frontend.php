@@ -33,8 +33,11 @@ class Sostt_Frontend {
 		if ( true === $this->apply_hooks ) {
 			$this->clean_hooks();
 
-			add_filter( 'body_class', array( $this, 'body_class' ) );
+			add_filter( 'template_include', array( $this, 'template_include' ), 20 );
+			add_filter( 'body_class', array( $this, 'body_class' ), 20 );
 			add_filter( 'siteorigin_panels_widget_classes', array( $this, 'siteorigin_panels_widget_classes' ), 20, 4 );
+			add_filter( 'img_caption_shortcode', array( $this, 'img_caption_shortcode' ), 20, 3 );
+			add_filter( 'sostt_the_content', array( $this, 'the_content' ) );
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ), 20 );
 
@@ -42,7 +45,6 @@ class Sostt_Frontend {
 			add_action( 'sostt_get_footer', array( $this, 'get_footer' ) );
 			add_action( 'sostt_get_single_template', array( $this, 'get_single_template' ) );
 
-			add_filter( 'template_include', array( $this, 'template_include' ), 20 );
 		}
 	}
 
@@ -83,6 +85,15 @@ class Sostt_Frontend {
 	}
 
 	/**
+	 * Custom single template.
+	 * Load front-end template.
+	 */
+	public function template_include( $template ) {
+		$template = SOSTT_PATH . 'page-templates/single-sostt.php';
+		return $template;
+	}
+
+	/**
 	 * Add custom body classes.
 	 */
 	public function body_class( $classes ) {
@@ -101,10 +112,76 @@ class Sostt_Frontend {
 		if ( 'Storytelling_Widget_Image_Widget' === $widget_class ) {
 			$classes[] = 'chapter sostt-section chapter-type-text';
 		} elseif ( 'Storytelling_Widget_Text_Widget' === $widget_class ) {
-			$classes[] = 'chapter sostt-section chapter-type-text';
+			$classes[] = 'chapter sostt-section chapter-type-text cover-text-simple';
 		}
 
 		return $classes;
+	}
+
+	/**
+	 * Change image caption default output.
+	 */
+	public function img_caption_shortcode( $empty, $attr, $content ) {
+		$id = str_replace( 'attachment_', '', $attr['id'] );
+		$data = wp_prepare_attachment_for_js( $id );
+
+		if ( empty( $data['width'] ) ) {
+			return $content;
+		}
+
+		$align = 'sostt-block-align-left';
+
+		if ( 'alignright' === $attr['align'] ) {
+			$align = 'sostt-block-align-right';
+		}
+
+		if ( ! empty( $data['description'] ) ) {
+			$height = $data['height'];
+			$caption = $data['description'];
+			$image = $data['url'];
+
+			$html = '<div class="aligned-extra-wrapper">' .
+						'<div class="sostt-text-over-background sostt-block ' . $align . '">' .
+							'<div class="sostt-text-over-background-wrapper" style-scope="sostt-text-over-background" style="height: 150px; min-height: ' . $height . 'px;">' .
+								'<div class="sostt-multi-background">' .
+									'<div class="sostt-background-image-with-shim">' .
+										'<div class="sostt-image" style="background-position: 50% 50%; background-image: url(\'' . $image . '\');"></div>' .
+										'<div class="sostt-background-image-with-shim-shim" style="background-color: rgba(0, 0, 0, 0.35);"></div>' .
+									'</div>' .
+								'</div>' .
+								'<p class="sostt-caption" data-block-text-alignment="top-left" data-text-color="light" style="font-size: 2em;">' . $caption . '</p>' .
+							'</div>' .
+						'</div>' .
+					'</div>';
+		} else {
+			$html = '<div class="aligned-extra-wrapper">' .
+						'<div class="sostt-simple-image sostt-block ' . $align . '">' .
+							'<div class="sostt-simple-image-wrapper sostt-cover-aligned-block-width-as-max-width sostt-simple-image-wrapper-sized">' .
+								'<div class="sostt-image real-image-size" style="background-position: 50% 50%;">' .
+									// '<img sizes="100vw" srcset="https://sostt.com/data/files/organization/222157/image/derivative/scale~400x0~0001-1505427728-52.jpg 400w,/data/files/organization/222157/image/raw/0001-1505427728-52.jpg">' .
+									do_shortcode( $content ) .
+								'</div>';
+
+			if ( ! empty( $data['caption'] ) ) {
+				$caption = $data['caption'];
+				$html .= '<p class="sostt-caption">' . $caption . '</p>';
+			}
+
+			$html .= 		'</div>' .
+						'</div>' .
+					'</div>';
+		}
+
+		return $html;
+	}
+
+	/**
+	 * Change text content default output.
+	 */
+	public function the_content( $text ) {
+		$text = preg_replace( '/(<h1>)([^<]+)(<\/h1>)/', '<h1 class="cover-title sostt-cover-font-sans-serif sostt-cover-h1"><span class="sostt-story-data">$2</span></h1>', $text );
+		$text = preg_replace( '/(<h2>)([^<]+)(<\/h2>)/', '<h2 class="cover-subtitle sostt-cover-font-sans-serif sostt-cover-h2"><span class="sostt-story-data">$2</span></h2>', $text );
+		return $text;
 	}
 
 	/**
@@ -142,15 +219,6 @@ class Sostt_Frontend {
 	 */
 	public function get_single_template() {
 		include( SOSTT_PATH . '/template-parts/content-single.php' );
-	}
-
-	/**
-	 * Custom single template.
-	 * Load front-end template.
-	 */
-	public function template_include( $template ) {
-		$template = SOSTT_PATH . 'page-templates/single-sostt.php';
-		return $template;
 	}
 
 }

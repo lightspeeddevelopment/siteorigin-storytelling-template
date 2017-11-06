@@ -856,7 +856,9 @@ figure, figcaption {
 	font-size: 3.33333em;
 }
 
-.medium-breakpoint .sostt-cover-h1, .section-cover .sostt-cover-h1 {
+.medium-breakpoint .sostt-cover-h1,
+.section-cover .sostt-cover-h1,
+.chapter-type-text .sostt-cover-h1 { /* LS custom */
 	font-size: 2.5em;
 }
 
@@ -866,17 +868,21 @@ figure, figcaption {
 	}
 }
 
-.medium-breakpoint .section-cover .sostt-cover-h1, .sostt-cover-h2 {
+.medium-breakpoint .section-cover .sostt-cover-h1,
+.sostt-cover-h2 {
 	font-size: 1.875em;
 }
 
 @media (max-width: 567px) {
-	.section-cover .sostt-cover-h1 {
+	.section-cover .sostt-cover-h1,
+	.chapter-type-text .sostt-cover-h1 { /* LS custom */
 		font-size: 1.875em;
 	}
 }
 
-.medium-breakpoint .sostt-cover-h2, .section-cover .sostt-cover-h2 {
+.medium-breakpoint .sostt-cover-h2,
+.section-cover .sostt-cover-h2,
+.chapter-type-text .sostt-cover-h2 { /* LS custom */
 	font-size: 1.5625em;
 }
 
@@ -891,7 +897,8 @@ figure, figcaption {
 }
 
 @media (max-width: 567px) {
-	.section-cover .sostt-cover-h2 {
+	.section-cover .sostt-cover-h2,
+	.chapter-type-text .sostt-cover-h2 { /* LS custom */
 		font-size: 1.25em;
 	}
 }
@@ -1263,7 +1270,8 @@ blockquote {
 	}
 }
 
-.sostt-block-align-left, .sostt-block-align-right {
+.sostt-block-align-left,
+.sostt-block-align-right {
 	margin-right: 2rem;
 	margin-left: 2rem;
 	width: 30rem;
@@ -1271,13 +1279,15 @@ blockquote {
 }
 
 @media (max-width: 50rem) {
-	.sostt-block-align-left, .sostt-block-align-right {
+	.sostt-block-align-left,
+	.sostt-block-align-right {
 		max-width: 50%;
 	}
 }
 
 @media (max-width: 567px) {
-	.sostt-block-align-left, .sostt-block-align-right {
+	.sostt-block-align-left,
+	.sostt-block-align-right {
 		margin-left: 1rem;
 		margin-right: 1rem;
 		width: 100%;
@@ -1309,7 +1319,8 @@ blockquote {
 }
 
 .sostt-block + .aligned-extra-wrapper > {
-	.sostt-block-align-left, .sostt-block-align-right {
+	.sostt-block-align-left,
+	.sostt-block-align-right {
 		margin-top: 0;
 	}
 }
@@ -2513,4 +2524,8 @@ body.app .story-cover {
 	.chapter:first-of-type {
 		margin-top: -2rem;
 	}
+}
+
+.sostt-custom-class-1 {
+	height: 100vh !important;
 }

@@ -7,11 +7,11 @@
 ?>
 
 <div class="section-cover story-data-container">
-	<div class="sostt-cover-solid-background cover-black sostt-shared sostt-cover sostt-block-align-center">
+	<div class="sostt-cover-solid-background cover-black sostt-cover sostt-block-align-center">
 		<div class="sostt-multi-background">
 			<div class="sostt-background-image-with-shim">
 				<div class="sostt-image" style="background-position: 50% 50%; background-image: url('<?php echo esc_attr( $image ); ?>');"></div>
-				<div class="sostt-background-image-with-shim-shim" style="background-color: rgba(0, 0, 0, 0.12);"></div>
+				<div class="sostt-background-image-with-shim-shim" style="background-color: rgba(0, 0, 0, 0.20);"></div>
 			</div>
 		</div>
 		<div class="cover-text-outside-wrapper sostt-cover-left-gutter-padding-left sostt-cover-right-gutter-padding-right">

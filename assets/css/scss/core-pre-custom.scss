@@ -1,0 +1,154 @@
+.cover-text-simple {
+	width: 100%;
+	color: black;
+	padding-top: 8rem;
+	.cover-text-wrapper {
+		text-align: left;
+		&[data-cover-text-alignment="left"] {
+			text-align: left;
+		}
+		&[data-cover-text-alignment="center"] {
+			text-align: center;
+		}
+	}
+	.cover-title {
+		// max-width: 100%; /* LS custom */
+		margin-top: 0;
+		margin-bottom: 0.25rem;
+		font-weight: 600;
+		line-height: 0.95;
+		color: inherit;
+	}
+	.cover-subtitle {
+		// max-width: 100%; /* LS custom */
+		font-weight: 300;
+		margin-top: 0;
+		color: inherit;
+		opacity: 0.65;
+		margin-bottom: 0;
+	}
+	.cover-byline {
+		opacity: 1;
+		margin-top: 0.5rem;
+		color: inherit;
+	}
+	.sostt-byline {
+		margin-top: 0.5em;
+	}
+}
+
+.story-cover .cover-text-simple {
+	padding-bottom: 1rem;
+	&.extra-padding-on-bottom {
+		padding-bottom: 8rem;
+	}
+}
+
+.cover-text-simple .cover-subtitle .sostt-story-data {
+	display: block;
+	padding-bottom: 1rem;
+}
+
+body:not(.page-compose) .cover-text-simple .cover-subtitle .sostt-story-data:empty {
+	display: none;
+	padding-bottom: 0;
+}
+
+.section-cover .cover-text-simple {
+	padding-top: 4rem;
+	padding-bottom: 1rem;
+	.cover-byline .sostt-story-data-byline {
+		display: block;
+		padding-bottom: 1.5rem;
+	}
+}
+
+.cover-text-simple .cover-byline .sostt-story-data-byline .sostt-byline-wrapper .byline-and-publication {
+	text-align: inherit;
+}
+
+body:not(.page-compose) .section-cover .cover-text-simple .cover-byline .sostt-story-data:empty {
+	display: none;
+}
+
+@media screen and (max-width: 567px) {
+	.cover-text-simple {
+		padding-top: 4rem;
+	}
+	.story-cover .cover-text-simple.extra-padding-on-bottom {
+		padding-bottom: 4rem;
+	}
+}
+
+.small-breakpoint .cover-text-simple {
+	padding-top: 4rem;
+}
+
+.sostt-simple-image {
+	display: block;
+	position: relative;
+	.sostt-simple-image-wrapper {
+		min-width: 15rem;
+		/* this is arbitrary */
+		position: relative;
+	}
+	.sostt-image img {
+		width: auto;
+		max-width: 100%;
+		margin: 0 auto;
+		display: block;
+	}
+	.sostt-simple-image-wrapper-sized {
+		display: table;
+		/* who woulda thunk! it's so the caption lines up correctly with small images */
+		margin: 0 auto;
+		.sostt-caption {
+			display: table-caption;
+			caption-side: bottom;
+		}
+	}
+}
+
+/* aligned image-specific styles */
+
+.sostt-block-align-left.sostt-simple-image, .sostt-block-align-right.sostt-simple-image {
+	width: auto;
+}
+
+.page-compose {
+	.sostt-block-align-left.sostt-simple-image, .sostt-block-align-right.sostt-simple-image {
+		max-width: 75%;
+		/* this is just the normal "width" size of the aligned blocks in the editor */
+		min-width: 18rem;
+		/* this is "big enough so that the block edit buttons fit" */
+	}
+}
+
+.sostt-simple-image {
+	&.sostt-block-align-full .sostt-cover-aligned-block-width-as-max-width, &.sostt-block-align-center .sostt-cover-aligned-block-width-as-max-width {
+		max-width: 100%;
+	}
+}
+
+.sostt-simple-image-wrapper[data-is_clickable] .sostt-image {
+	cursor: pointer;
+}
+
+.sostt-simple-image .media-audio-annotation {
+	position: absolute;
+	top: 35px;
+	left: 35px;
+}
+
+@media screen and (max-width: 567px) {
+	.sostt-block-align-left.sostt-simple-image, .sostt-block-align-right.sostt-simple-image {
+		width: 100%;
+	}
+	.sostt-simple-image .media-audio-annotation {
+		top: 15px;
+		left: 15px;
+		> svg {
+			max-height: 15px;
+		}
+	}
+}

@@ -275,21 +275,21 @@ figure, figcaption { margin: 0; }
 
 .sostt-cover-h1 { font-size: 3.33333em; }
 
-.medium-breakpoint .sostt-cover-h1, .section-cover .sostt-cover-h1 { font-size: 2.5em; }
+.medium-breakpoint .sostt-cover-h1, .section-cover .sostt-cover-h1, .chapter-type-text .sostt-cover-h1 { /* LS custom */ font-size: 2.5em; }
 
 @media (max-width: 567px) { .sostt-cover-h1 { font-size: 2.5em; } }
 
 .medium-breakpoint .section-cover .sostt-cover-h1, .sostt-cover-h2 { font-size: 1.875em; }
 
-@media (max-width: 567px) { .section-cover .sostt-cover-h1 { font-size: 1.875em; } }
+@media (max-width: 567px) { .section-cover .sostt-cover-h1, .chapter-type-text .sostt-cover-h1 { /* LS custom */ font-size: 1.875em; } }
 
-.medium-breakpoint .sostt-cover-h2, .section-cover .sostt-cover-h2 { font-size: 1.5625em; }
+.medium-breakpoint .sostt-cover-h2, .section-cover .sostt-cover-h2, .chapter-type-text .sostt-cover-h2 { /* LS custom */ font-size: 1.5625em; }
 
 @media (max-width: 567px) { .sostt-cover-h2 { font-size: 1.5625em; } }
 
 .medium-breakpoint .section-cover .sostt-cover-h2 { font-size: 1.25em; }
 
-@media (max-width: 567px) { .section-cover .sostt-cover-h2 { font-size: 1.25em; } }
+@media (max-width: 567px) { .section-cover .sostt-cover-h2, .chapter-type-text .sostt-cover-h2 { /* LS custom */ font-size: 1.25em; } }
 
 .sostt-cover-byline { font-size: 1.125em; }
 
@@ -794,5 +794,7 @@ body.app .story-cover { min-height: 100%; }
 .chapter:first-of-type { margin-top: -5rem; }
 
 @media (max-width: 567px) { .chapter:first-of-type { margin-top: -2rem; } }
+
+.sostt-custom-class-1 { height: 100vh !important; }
 
 /*# sourceMappingURL=maps/core-custom.css.map */

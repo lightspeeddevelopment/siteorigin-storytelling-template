@@ -27,7 +27,7 @@ msgstr ""
 msgid "Storytelling image widget."
 msgstr ""
 
-#: widgets/storytelling-image/storytelling-image.php:28
+#: widgets/storytelling-image/storytelling-image.php:28, widgets/storytelling-quote/storytelling-quote.php:28
 msgid "Image file"
 msgstr ""
 
@@ -37,6 +37,18 @@ msgstr ""
 
 #: widgets/storytelling-image/storytelling-image.php:39
 msgid "Tagline text"
+msgstr ""
+
+#: widgets/storytelling-quote/storytelling-quote.php:14
+msgid "Storytelling Quote"
+msgstr ""
+
+#: widgets/storytelling-quote/storytelling-quote.php:16
+msgid "Storytelling quote widget."
+msgstr ""
+
+#: widgets/storytelling-quote/storytelling-quote.php:34
+msgid "Quote"
 msgstr ""
 
 #: widgets/storytelling-text/storytelling-text.php:14
