@@ -2529,3 +2529,13 @@ body.app .story-cover {
 .sostt-custom-class-1 {
 	height: 100vh !important;
 }
+
+.rev_slider_wrapper {
+	@extend .sostt-block;
+
+	width: 50rem;
+
+	ul {
+		max-width: none;
+	}
+}
