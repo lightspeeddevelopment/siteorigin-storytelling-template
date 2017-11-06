@@ -15,8 +15,24 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: classes/class-sostt-admin.php:22
+#: classes/class-sostt-admin.php:24
 msgid "SiteOrigin Storytelling"
+msgstr ""
+
+#: classes/class-sostt-admin.php:34
+msgid "Storytelling Template"
+msgstr ""
+
+#: classes/class-sostt-admin.php:54
+msgid "Display link to homepage"
+msgstr ""
+
+#: classes/class-sostt-admin.php:58
+msgid "Display link to landing page"
+msgstr ""
+
+#: classes/class-sostt-admin.php:63
+msgid "Landing page link"
 msgstr ""
 
 #: widgets/storytelling-image/storytelling-image.php:14

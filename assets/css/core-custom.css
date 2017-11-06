@@ -801,4 +801,22 @@ body.app .story-cover { min-height: 100%; }
 
 .rev_slider_wrapper ul { max-width: none; }
 
+.nav-icons .lsx-sharing-content { margin-bottom: 0 !important; }
+
+.nav-icons .lsx-sharing-content p { line-height: 1; margin-left: 0; margin-right: 0; }
+
+.nav-icons .lsx-sharing-content .lsx-sharing-button { margin-bottom: 5px; margin-right: 0; }
+
+.nav-icons .lsx-sharing-content .lsx-sharing-button a { background-color: transparent !important; color: #ccc !important; font-size: 25px; margin-right: 0; opacity: 0.65; transition: opacity ease-in-out 300ms; }
+
+.nav-icons .lsx-sharing-content .lsx-sharing-button a:hover { opacity: 1; }
+
+.nav-icons .lsx-sharing-content .fa { vertical-align: middle; }
+
+.nav-icons-left { position: fixed; top: 1rem; left: 1rem; z-index: 6; font-size: 1.45em; width: 2rem; }
+
+.nav-icons-left a { background-color: transparent; color: #ccc; display: inline-block; font-size: 25px; opacity: 0.65; margin-bottom: 5px; transition: opacity ease-in-out 300ms; }
+
+.nav-icons-left a:hover { opacity: 1; }
+
 /*# sourceMappingURL=maps/core-custom.css.map */

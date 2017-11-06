@@ -8,6 +8,27 @@
 	global $post;
 ?>
 
+<div class="nav-icons-left">
+	<?php
+		$post_id = get_the_ID();
+		$link_to_homepage = get_post_meta( $post_id, 'sostt_link_to_homepage', true );
+		$link_to_landing_page = get_post_meta( $post_id, 'sostt_link_to_landing_page', true );
+		$landing_page_link = get_post_meta( $post_id, 'sostt_landing_page_link', true );
+
+		if ( ! empty( $link_to_homepage ) ) {
+			?><a href="<?php echo home_url(); ?>"><i class="fa fa-home" aria-hidden="true"></i></a><?php
+		}
+
+		if ( ! empty( $link_to_landing_page ) && ! empty( $landing_page_link ) ) {
+			?><a href="<?php echo esc_attr( $landing_page_link ); ?>"><i class="fa fa-arrow-left" aria-hidden="true"></i></a><?php
+		}
+	?>
+</div>
+
+<div class="nav-icons">
+	<?php echo do_shortcode( '[lsx_sharing_buttons buttons="facebook,twitter"]' ); ?>
+</div>
+
 <article id="post-<?php the_ID(); ?>">
 	<section class="sostt-section story-cover">
 		<div class="sostt-cover-text-color cover-text-bold sostt-cover sostt-block-align-center">

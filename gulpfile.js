@@ -69,7 +69,49 @@ gulp.task('styles-rtl', function () {
 		.pipe(gulp.dest('assets/css'))
 });
 
-gulp.task('compile-css', ['styles', 'styles-rtl']);
+gulp.task('vendor-styles', function () {
+	return gulp.src('assets/css/vendor/*.scss')
+		.pipe(plumber({
+			errorHandler: function(err) {
+				console.log(err);
+				this.emit('end');
+			}
+		}))
+		.pipe(sass({
+			outputStyle: 'compact',
+			includePaths: ['assets/css/vendor']
+		}).on('error', gutil.log))
+		.pipe(autoprefixer({
+			browsers: browserlist,
+			casacade: true
+		}))
+		.pipe(gulp.dest('assets/css/vendor'))
+});
+
+gulp.task('vendor-styles-rtl', function () {
+	return gulp.src('assets/css/vendor/*.scss')
+		.pipe(plumber({
+			errorHandler: function(err) {
+				console.log(err);
+				this.emit('end');
+			}
+		}))
+		.pipe(sass({
+			outputStyle: 'compact',
+			includePaths: ['assets/css/vendor']
+		}).on('error', gutil.log))
+		.pipe(autoprefixer({
+			browsers: browserlist,
+			casacade: true
+		}))
+		.pipe(rtlcss())
+		.pipe(rename({
+			suffix: '-rtl'
+		}))
+		.pipe(gulp.dest('assets/css/vendor'))
+});
+
+gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl']);
 
 gulp.task('js', function() {
 	return gulp.src('assets/js/src/**/*.js')

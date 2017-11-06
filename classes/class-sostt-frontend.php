@@ -197,6 +197,9 @@ class Sostt_Frontend {
 	 * Enqueue scripts and styles.
 	 */
 	public function wp_enqueue_scripts() {
+		wp_register_style( 'fontawesome', SOSTT_URL . 'assets/css/vendor/font-awesome.css', array(), SOSTT_VER );
+		wp_style_add_data( 'fontawesome', 'rtl', 'replace' );
+
 		wp_enqueue_script( 'sostt', SOSTT_URL . 'assets/js/sostt.min.js', array( 'jquery' ), SOSTT_VER, true );
 
 		$params = apply_filters( 'sostt_js_params', array(
@@ -205,7 +208,7 @@ class Sostt_Frontend {
 
 		wp_localize_script( 'sostt', 'sostt_params', $params );
 
-		wp_enqueue_style( 'sostt', SOSTT_URL . 'assets/css/sostt.css', array(), SOSTT_VER );
+		wp_enqueue_style( 'sostt', SOSTT_URL . 'assets/css/sostt.css', array( 'fontawesome' ), SOSTT_VER );
 		wp_style_add_data( 'sostt', 'rtl', 'replace' );
 	}
 
