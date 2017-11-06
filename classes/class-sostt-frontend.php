@@ -162,8 +162,8 @@ class Sostt_Frontend {
 									do_shortcode( $content ) .
 								'</div>';
 
-			if ( ! empty( $data['caption'] ) ) {
-				$caption = $data['caption'];
+			if ( ! empty( $attr['caption'] ) ) {
+				$caption = $attr['caption'];
 				$html .= '<p class="sostt-caption">' . $caption . '</p>';
 			}
 
