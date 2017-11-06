@@ -37,6 +37,7 @@ class Sostt_Frontend {
 			add_filter( 'body_class', array( $this, 'body_class' ), 20 );
 			add_filter( 'siteorigin_panels_widget_classes', array( $this, 'siteorigin_panels_widget_classes' ), 20, 4 );
 			add_filter( 'img_caption_shortcode', array( $this, 'img_caption_shortcode' ), 20, 3 );
+			add_filter( 'wp_video_shortcode', array( $this, 'wp_video_shortcode' ), 20, 5 );
 			add_filter( 'sostt_the_content', array( $this, 'the_content' ) );
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ), 20 );
@@ -173,6 +174,14 @@ class Sostt_Frontend {
 		}
 
 		return $html;
+	}
+
+	/**
+	 * Change video default output.
+	 */
+	public function wp_video_shortcode( $output, $atts, $video, $post_id, $library ) {
+		$output = '<div class="sostt-simple-video sostt-block sostt-block-align-center">' . $output . '</div>';
+		return $output;
 	}
 
 	/**
